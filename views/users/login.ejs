@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") -%>
+<div class="row">
+    <h1 class="col-8 offset-2 ">User Login</h1>
+  <div class="col-8 offset-2">
+    <form action="/login" method="post" class="needs-validation" novalidate>
+     <!--  Login For Username  -->
+        <div class="form-group mb-2">
+        <label for="username" class="form-label"> Enter Username</label>
+        <input
+          type="text "
+          name="username"
+          id="username"
+          placeholder="Username@12334"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback"><strong>Error:</strong> Username must have a value</div>
+      </div>
+
+   
+      
+    <!-- Login password creation -->
+      <div class="form-group mb-2">
+        <label for="password" class="form-label"> Enter Password </label>
+        <input
+          type="password"
+          name="password"
+          id="password"     
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback"><strong>Error:</strong> Password must have a value</div>
+      </div>
+      <!-- button for Login -->
+       <button class="btn btn-success"> Login</button>
+    </form>
+  </div>
+</div>

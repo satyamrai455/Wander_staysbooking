@@ -1,0 +1,111 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2>Edit your Listings</h2>
+    <form
+      method="POST"
+      action="/listings/<%= Listing._id %>?_method=PUT"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-2">
+        <label>Entered Title: </label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[title]"
+          value="<%= Listing.title %>"
+          required
+        />
+        <div class="valid-feedback">Valid Title</div>
+        <div class="invalid-feedback">Please Enter Valid Title</div>
+      </div>
+
+      <div class="mb-3">
+        <label>Entered Description: </label>
+        <textarea class="form-control" name="listing[description]" required>
+<%= Listing.description %></textarea
+        >
+        <div class="invalid-feedback">Please Enter Description</div>
+      </div>
+      <div class="mb-3">
+        <label>Original Image Preview </label><br>
+        <img src="<%= transformedImageUrl  %>" >
+      </div>
+
+      <div class="mb-3">
+        <label>Upload New Image </label>
+        <input 
+        class="form-control" 
+        type="file"
+        name="listing[image]" />
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label>Enter Price: </label>
+          <input
+            class="form-control"
+            type="number"
+            name="listing[price]"
+            value="<%= Listing.price %>"
+            required
+          />
+          <div class="invalid-feedback">Please Enter Valid Price</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label>Enter Location: </label>
+          <input
+            class="form-control"
+            type="text"
+            name="listing[location]"
+            value="<%= Listing.location %>"
+            required
+          />
+          <div class="invalid-feedback">Please Enter Valid Location</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Enter Country: </label>
+        <input
+          class="form-control"
+          type="text"
+          name="listing[country]"
+          value="<%= Listing.country %>"
+          required
+        />
+        <div class="invalid-feedback">Please Enter Valid Location</div>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn btn-danger">Edit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Custom behavior to move focus to the next input on Enter key press
+  document.querySelectorAll("input, textarea").forEach(function (element) {
+    element.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault(); // Prevent form submission on Enter
+        var nextElement = getNextElement(element);
+        if (nextElement) {
+          nextElement.focus(); // Move focus to next input element
+        }
+      }
+    });
+  });
+
+  // Function to find the next input element (e.g., textarea, input fields)
+  function getNextElement(currentElement) {
+    var formElements = Array.from(currentElement.form.elements);
+    var index = formElements.indexOf(currentElement);
+    return formElements[index + 1] || null; // Return the next input element or null if none
+  }
+</script>

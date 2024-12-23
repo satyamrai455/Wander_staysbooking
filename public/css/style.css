@@ -1,0 +1,148 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.navbar {
+  height: 5rem; /* Set your custom height */
+}
+.nav-links {
+  background-color: white !important;
+  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-collapse .navbar-nav {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+.nav-link:hover {
+  color: #ff6347 !important;
+}
+/* footer style */
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-socials {
+  width: 100%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-socials i {
+  margin-right: 1rem;
+}
+
+.f-info-socials i:hover {
+  cursor: pointer;
+}
+.f-info {
+  text-align: center;
+  height: 8rem;
+  display: flex;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+/* cards */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.listing-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  font-family: 400 !important;
+}
+
+/* listing image,title,price anchor styling   */
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-ovelay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  /* This is to ensure it appears at the bottom only after content overflow */
+}
+
+/*  style for show.ejs */
+.show-img {
+  height: 50vh;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .btns button {
+    transform: scale(0.75);
+  }
+}
+
+/* map */
+#map {
+ height: 400px;
+ width: 90vh;
+}
+
+ /*Example 1, all the CSS is defined here and not in JS*/            
+
+
